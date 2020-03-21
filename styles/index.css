@@ -1,0 +1,154 @@
+/* Custom reset */
+html {
+  height: 100%;
+  box-sizing: border-box;
+
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+
+  font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6, small, i, em, b, strong, input, button, kbd {
+  color: inherit;
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input, button {
+  font: inherit;
+}
+
+button {
+  border: none;
+
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/* Main styles */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #34444f;
+  font-family: 'Lato', sans-serif;
+}
+
+.header {
+  margin: 2rem 0 3rem;
+
+  color: #000000;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 3.5rem;
+
+  font-weight: 700;
+  font-size: 2em;
+  text-transform: capitalize;
+}
+
+.positions {
+  margin-bottom: 1.5rem;
+
+  border: 1px solid #e3e5e4;
+
+  counter-reset: position;
+}
+
+.position {
+  display: flex;
+  align-items: stretch;
+
+  border-bottom: 1px solid #e3e5e4;
+
+  counter-increment: position;
+}
+
+.position::before {
+  content: counter(position);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+
+  font-size: 1.75em;
+
+  background-color: #c3c7ca;
+}
+
+.position-body {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9375em;
+
+  cursor: pointer;
+}
+
+.position-body * {
+  pointer-events: none;
+}
+
+.position-body.is-dragging-over {
+  background-color: #eaeaea;
+}
+
+.position-person {
+  margin-right: 2rem;
+}
+
+.position.is-correct .position-person {
+  color: #3ae374;
+}
+
+.position.is-wrong .position-person {
+  color: #ff3838;
+}
+
+.button {
+  padding: 1rem 2rem;
+
+  text-transform: capitalize;
+
+  background-color: #c3c7ca;
+}
